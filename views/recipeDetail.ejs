@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= recipe.strMeal %></title>
+</head>
+<body>
+  <h1><%= recipe.strMeal %></h1>
+  <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>">
+
+  <h2>Ingredients:</h2>
+  <ul>
+    <% for(let i = 1; i <= 20; i++) { %>
+      <% if (recipe[`strIngredient${i}`]) { %>
+        <li><%= recipe[`strIngredient${i}`] %> - <%= recipe[`strMeasure${i}`] %></li>
+      <% } %>
+    <% } %>
+  </ul>
+
+  <h2>Instructions:</h2>
+  <p><%= recipe.strInstructions %></p>
+
+  <a href="/recipies">Back to recipes</a>
+</body>
+</html>
