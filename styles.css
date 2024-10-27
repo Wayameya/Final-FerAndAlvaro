@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+        display: flex;
+        flex-direction: column; /* Stack header, navbar, and main content vertically */
+        height: 100vh; /* Full viewport height */
+    background-color: #ebdfbf;
+    font-family: 'Prompt', sans-serif; /* Use Prompt as the font for the body */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Aligns header content to the top */
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-left {
+    width: 20%;  /* Takes 20% of the header for the logo */
+}
+
+.logo {
+    width: 80%; /* Make the logo smaller */
+    margin-top: 70px; /* Move the logo down */
+    margin-left: 20px;
+}
+
+.header-right {
+    width: 80%;  /* Takes the remaining 80% for the graphic */
+    position: relative; /* Allows positioning for the title and buttons */
+}
+
+.graphic-container {
+    position: relative;
+    width: 100%;
+}
+
+.graphic {
+    width: 100%; /* Graphic image takes full width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+h1 {
+    position: absolute; /* Keep it absolute for precise placement */
+    left: 250px; /* Aligns title to the left */
+    top: 50px; /* Adjust this value to move the title lower */
+    font-size: 150px; /* Title font size */
+    color: #fff; /* Title color for visibility */
+    margin: 0; /* Removes margin to keep it flush */
+    z-index: 10; /* Ensures title is above the graphic */
+}
+
+.button-container {
+    right: 150px;
+    bottom: 220px;
+    position: absolute; /* Positions buttons on top of the graphic */
+    display: flex;
+    gap: 5px; /* Space between buttons */
+    z-index: 10; /* Ensures buttons are above the graphic */
+}
+
+button {
+    padding: 10px 20px; /* Padding inside buttons */
+    border: none; /* Removes default border */
+    color: white; /* Text color */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    font-size: 25px; /* Button text size */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.navbar {
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    top: -15px;
+    height: 50px;
+    width: 100%; /* Navbar takes full width */
+    background-color: #b78c64; /* Navbar background color */
+    text-align: center; /* Centers navbar items */
+    padding: 15px 0; /* Padding around navbar */
+    box-shadow: 0 2px 5px #b78c64; /* Adds shadow for depth */
+    position: relative; /* Ensure it stays on top */
+    z-index: 100; /* Keep it above other elements */
+}
+
+.navbar ul {
+    list-style-type: none; /* Removes bullets from list */
+}
+
+.navbar ul li {
+    display: inline; /* Displays list items inline */
+    margin-right: 50px; /* Space between list items */
+}
+
+.navbar ul li a {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.navbar ul li a:hover {
+    text-decoration: none;
+    filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.5)); /* Right and down shadow with blur */
+    color: #fff;
+}
+
+.subtitle {
+    font-family: 'Pacifico', sans-serif; /* Use Prompt as the font for the body */
+    position: absolute; /* Keep it absolute for precise placement */
+    left: 500px; /* Aligns subtitle to the left */
+    top: 210px; /* Adjust this value to move the subtitle lower */
+    font-size: 30px; /* Subtitle font size */
+    color: #ebdfbf; /* Subtitle color for visibility */
+    margin: 0; /* Removes margin to keep it flush */
+    z-index: 10; /* Ensures subtitle is above the graphic */
+}
+
+button.login { /* Class for Sign In / Log In button */
+    font-weight: 700;
+    background-color: #007bff00; /* Blue color */
+    color: #9d4929;
+}
+
+button.profile { /* Class for Profile button */
+    font-weight: 700;
+    background-color: #28a74600; /* Green color */
+    color: #ebdfbf;
+}
+
+button:hover {
+    text-decoration: none;
+    filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.5)); /* Right and down shadow with blur */
+    color: #fff;
+}
