@@ -1,64 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="icon" href="Images/logo.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <head>
+    <link rel="icon" href="Images/logo.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
 
-    <title>Platus</title>
-</head>
+    <title>Our Recipes - Platus</title>
 
-<body>
+    <style>
+      /* Añade estilos de cuadrícula */
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+      .recipe-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+      }
+      .recipe-card:hover {
+        transform: scale(1.05);
+      }
+      .recipe-card img {
+        width: 100%;
+        height: auto;
+      }
+      .recipe-card h2 {
+        font-size: 1.2rem;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
 
-  <header class="header">
-    <div class="header-left">
-      <img src="../images/PlatusLogo.png" alt="Service Logo" class="logo">
-    </div>
-    <div class="header-right">
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <img src="../images/PlatusLogo.png" alt="Service Logo" class="logo" />
+      </div>
+      <div class="header-right">
         <div class="graphic-container">
-            <img src="../images/HeaderArt.png" alt="Graphic Image" class="graphic">
-            <h1>Platus</h1>
-            <h2 class="subtitle">Hunger? No longer!</h2>
-            <div class="button-container">
-                <button class="login" onclick="window.location.href='Login.html'">Sign In / Log In</button>
-                <button class="profile" onclick="window.location.href='Profile.html'">Profile</button>
-            </div>
-        </div>
-    </div>
-  </header>
-
-  <nav class="navbar">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/recipies">Recipies</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>Our Recipes</h1>
-  </header>
-
-  <!-- Sección de cuadrícula para todas las recetas -->
-  <section class="recipe-grid">
-      <% recipes.forEach(recipe => { %>
-          <div class="recipe-card">
-              <a href="/recipies/<%= recipe.idMeal %>">
-                  <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>">
-                  <h2><%= recipe.strMeal %></h2>
-              </a>
+          <img
+            src="../images/HeaderArt.png"
+            alt="Graphic Image"
+            class="graphic"
+          />
+          <h1>Platus</h1>
+          <h2 class="subtitle">Hunger? No longer!</h2>
+          <div class="button-container">
+            <button class="login" onclick="window.location.href='Login.html'">
+              Sign In / Log In
+            </button>
+            <button
+              class="profile"
+              onclick="window.location.href='Profile.html'"
+            >
+              Profile
+            </button>
           </div>
-      <% }) %>
-  </section>
-  
-  <footer class="footer">
-    <p>&copy; 2024 Platus. All rights reserved.</p>
-  </footer>
+        </div>
+      </div>
+    </header>
 
-</body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/recipies">Recipies</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Our Recipes</h1>
+    </header>
+
+    <!-- Sección de cuadrícula para las recetas -->
+    <section class="recipe-grid">
+      <% recipes.forEach(recipe => { %>
+      <div class="recipe-card">
+        <a href="/recipes/<%= recipe.idMeal %>">
+          <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>" />
+          <h2><%= recipe.strMeal %></h2>
+        </a>
+      </div>
+      <% }) %>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2024 Platus. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

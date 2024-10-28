@@ -1,26 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= recipe.strMeal %></title>
-</head>
-<body>
-  <h1><%= recipe.strMeal %></h1>
-  <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= recipe.strMeal %> - Platus</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .recipe-card {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .recipe-card img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .recipe-card h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .recipe-card h2 {
+        font-size: 1.5rem;
+        margin: 20px 0 10px;
+      }
+      .ingredients-list,
+      .instructions {
+        text-align: left;
+        margin-top: 15px;
+      }
+      .back-link {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
 
-  <h2>Ingredients:</h2>
-  <ul>
-    <% for(let i = 1; i <= 20; i++) { %>
-      <% if (recipe[`strIngredient${i}`]) { %>
-        <li><%= recipe[`strIngredient${i}`] %> - <%= recipe[`strMeasure${i}`] %></li>
+  <body>
+    <div class="recipe-card">
+      <h1><%= recipe.strMeal %></h1>
+      <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>" />
+
+      <% if (recipe.strInstructions) { %>
+      <div class="instructions">
+        <h2>Instructions:</h2>
+        <p><%= recipe.strInstructions %></p>
+      </div>
+      <% } %> <% let hasIngredients = false; for (let i = 1; i <= 20; i++) { if
+      (recipe[`strIngredient${i}`]) { hasIngredients = true; break; } } %> <% if
+      (hasIngredients) { %>
+      <div class="ingredients-list">
+        <h2>Ingredients:</h2>
+        <ul>
+          <% for (let i = 1; i <= 20; i++) { if (recipe[`strIngredient${i}`]) {
+          %>
+          <li>
+            <%= recipe[`strIngredient${i}`] %> - <%= recipe[`strMeasure${i}`] %>
+          </li>
+          <% } } %>
+        </ul>
+      </div>
+      <% } else { %>
+      <h2>No ingredients available for this recipe.</h2>
       <% } %>
-    <% } %>
-  </ul>
 
-  <h2>Instructions:</h2>
-  <p><%= recipe.strInstructions %></p>
-
-  <a href="/recipies">Back to recipes</a>
-</body>
+      <a href="/recipies" class="back-link">Back to recipes</a>
+    </div>
+  </body>
 </html>
