@@ -49,9 +49,9 @@ body {
 
 h1 {
   position: absolute;
-  left: 250px;
-  top: 50px;
-  font-size: 150px;
+  left: 30%;
+  top: 50%;
+  font-size: auto;
   color: #fff;
   margin: 0;
   z-index: 10;
@@ -445,9 +445,109 @@ section {
   text-decoration: none;
 }
 
-@media (max-width: 900px) {
-  * {
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .header-left, .header-right {
     width: 100%;
-    height: 100%;
+  }
+
+  .logo {
+    width: 70%;
+    margin: 20px 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar ul li:last-child {
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    left: 10px;
+    top: 180px;
+    font-size: 24px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-text {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  h1 {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+  }
+
+  .button-container {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .contact-section {
+    padding: 20px;
+  }
+
+  .contact-container {
+    padding: 15px;
+  }
+
+  .contact-section h2 {
+    font-size: 28px;
+  }
+
+  .contact-section p {
+    font-size: 16px;
+  }
+
+  .home-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-section .text-content h2 {
+    font-size: 40px;
+  }
+
+  .home-section .text-content p {
+    font-size: 16px;
+  }
+
+  .dishes-section {
+    padding: 10px;
+  }
+
+  .dishGallery {
+    gap: 10px;
+  }
+
+  .food-image {
+    width: 200px;
+  }
+
+  .recipe-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 }

@@ -164,21 +164,22 @@ section {
   height: 40px;
   width: 160px;
   border-radius: 8px;
-  background: rgb(247, 166, 182);
-  color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  color: #ebdfbf;
   font-size: 16px;
   outline: none;
-  border: 2px solid rgb(250, 194, 194);
+  border: 2px solid #ebdfbf;
   cursor: pointer;
   font-weight: 600;
   z-index: 1; /* Adjusted from -1 */
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .home-section .text-content .btn:hover {
-  background: rgb(217, 127, 255);
-  border: 2px solid rgb(201, 170, 215);
+  background: #ebdfbf;   
+  border: 2px solid #ebdfbf;
 }
 
 .home-section {
@@ -247,7 +248,7 @@ section {
 }
 
 .heading span {
-  color: rgb(217, 127, 255);
+  color: #ebdfbf;
 }
 
 /* Estilo para la sección de mariscos */

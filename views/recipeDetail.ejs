@@ -54,6 +54,27 @@
   </head>
 
   <body>
+    <!-- Encabezado de la página -->
+    <header class="header">
+      <div class="header-left">
+        <img src="../public/images/PlatusLogo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="header-right">
+        <div class="graphic-container">
+          <img src="../public/images/HeaderArt.png" alt="Graphic" class="graphic" />
+          <h1>Contact Us</h1>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/recipies">Recipies</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
     <div class="recipe-card">
       <h1><%= recipe.strMeal %></h1>
       <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>" />
