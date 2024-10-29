@@ -14,32 +14,55 @@
     />
     <link rel="stylesheet" href="../css/styles.css" />
     <style>
+      body {
+        background-color: #9d4929;
+        font-family: 'Prompt', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      
       .recipe-card {
         max-width: 600px;
-        margin: 20px auto;
+        margin: 20px;
         padding: 20px;
-        border: 1px solid #ddd;
+        border: 1px solid #ccc;
         border-radius: 8px;
+        background-color: #ebdfbf;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
+        overflow-y: auto;
+        max-height: 90vh;
       }
+      
+      .recipe-card h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #333;
+        background-color: white;
+        padding: 10px 20px;
+      }
+      
       .recipe-card img {
         width: 100%;
         border-radius: 8px;
       }
-      .recipe-card h1 {
-        font-size: 2rem;
-        margin-bottom: 10px;
-      }
+      
       .recipe-card h2 {
         font-size: 1.5rem;
         margin: 20px 0 10px;
+        color: #555;
       }
+      
       .ingredients-list,
       .instructions {
         text-align: left;
         margin-top: 15px;
       }
+      
       .back-link {
         display: block;
         margin-top: 20px;
@@ -47,6 +70,7 @@
         color: #007bff;
         font-weight: bold;
       }
+      
       .back-link:hover {
         text-decoration: underline;
       }
@@ -54,27 +78,6 @@
   </head>
 
   <body>
-    <!-- Encabezado de la página -->
-    <header class="header">
-      <div class="header-left">
-        <img src="../public/images/PlatusLogo.png" alt="Logo" class="logo" />
-      </div>
-      <div class="header-right">
-        <div class="graphic-container">
-          <img src="../public/images/HeaderArt.png" alt="Graphic" class="graphic" />
-          <h1>Contact Us</h1>
-        </div>
-      </div>
-    </header>
-
-    <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/recipies">Recipies</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
     <div class="recipe-card">
       <h1><%= recipe.strMeal %></h1>
       <img src="<%= recipe.strMealThumb %>" alt="<%= recipe.strMeal %>" />
@@ -84,14 +87,21 @@
         <h2>Instructions:</h2>
         <p><%= recipe.strInstructions %></p>
       </div>
-      <% } %> <% let hasIngredients = false; for (let i = 1; i <= 20; i++) { if
-      (recipe[`strIngredient${i}`]) { hasIngredients = true; break; } } %> <% if
-      (hasIngredients) { %>
+      <% } %> 
+      
+      <% let hasIngredients = false; for (let i = 1; i <= 20; i++) { 
+           if (recipe[`strIngredient${i}`]) { 
+             hasIngredients = true; 
+             break; 
+           } 
+         } %> 
+      
+      <% if (hasIngredients) { %>
       <div class="ingredients-list">
         <h2>Ingredients:</h2>
         <ul>
-          <% for (let i = 1; i <= 20; i++) { if (recipe[`strIngredient${i}`]) {
-          %>
+          <% for (let i = 1; i <= 20; i++) { 
+               if (recipe[`strIngredient${i}`]) { %>
           <li>
             <%= recipe[`strIngredient${i}`] %> - <%= recipe[`strMeasure${i}`] %>
           </li>

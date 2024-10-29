@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ebdfbf;
+  font-family: "Prompt", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-left {
+  width: 20%;
+}
+
+.logo {
+  width: 80%;
+  margin-top: 70px;
+  margin-left: 20px;
+}
+
+.header-right {
+  width: 80%;
+  position: relative;
+}
+
+.graphic-container {
+  position: relative;
+  width: 100%;
+}
+
+.graphic {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  font-size: auto;
+  color: #fff;
+  margin: 0;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.navbar {
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
+  top: -15px;
+  height: 50px;
+  width: 100%;
+  background-color: #b78c64;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px #b78c64;
+  position: relative;
+  z-index: 100;
+  display: flex; /* Cambia aquí para usar flexbox */
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.navbar ul {
+  display: flex; /* Usa flexbox para la lista */
+  list-style-type: none;
+  padding: 0; /* Asegúrate de que no haya padding */
+  margin: 0; /* Asegúrate de que no haya margen */
+}
+
+.navbar ul li {
+  margin-right: 50px;
+}
+
+.navbar ul li:last-child {
+  margin-right: 0; /* Elimina el margen del último elemento */
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  text-decoration: none;
+  filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.5));
+  color: #fff;
+}
+
+.subtitle {
+  font-family: "Pacifico", sans-serif;
+  position: absolute;
+  left: 500px;
+  top: 210px;
+  font-size: 30px;
+  color: #ebdfbf;
+  margin: 0;
+  z-index: 10;
+}
+
+.recipe-card {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.recipe-card .instructions,
+.recipe-card .ingredients-list {
+  text-align: left;
+  margin-top: 15px;
+}
+.recipe-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.recipe-card h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.recipe-card h2 {
+  font-size: 1.5rem;
+  margin: 20px 0 10px;
+}
+.ingredients-list,
+.instructions {
+  text-align: left;
+  margin-top: 15px;
+}
+.back-link {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* Ajuste del header */
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ajuste de la receta */
+  .recipe-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .recipe-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .ingredients-list,
+  .instructions {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Logo y header en pantallas pequeñas */
+  .logo {
+    width: 50%;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .recipe-card h1 {
+    font-size: 1.2rem;
+  }
+
+  .recipe-card h2 {
+    font-size: 1rem;
+  }
+
+  .recipe-card {
+    padding: 15px;
+    margin: 10px;
+  }
+}
